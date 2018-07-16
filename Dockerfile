@@ -48,12 +48,4 @@ RUN curl -o ./PowerCLI-Example-Scripts.zip -J -L https://github.com/vmware/Power
 RUN tdnf erase -y unzip && \
     tdnf clean all
 
-RUN wget http://ftp.tucha13.net/pub/software/VMware-ovftool-4.1.0/VMware-ovftool-4.1.0-2459827-lin.x86_64.bundle
-
-
-RUN chmod +x VMware-ovftool-4.1.0-2459827-lin.x86_64.bundle
-
-RUN echo -e "/w00t\n" >> /tmp/answer
-RUN VMware-ovftool-4.1.0-2459827-lin.x86_64.bundle --eulas-agreed --required --console < /tmp/answer
-
-CMD ["/bin/bash"]
+CMD ["/bin/pwsh"]
